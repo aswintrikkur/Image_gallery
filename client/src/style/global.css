@@ -9,3 +9,8 @@
 #root{
 
 }
+
+button:hover{
+cursor: pointer;
+
+}

@@ -1,3 +1,6 @@
 .loading-bar-container{
-    
+    background-color: var(--color-primary);
+    height: 8px;
+    width: 80%;
+    border-radius: 4px;
 }

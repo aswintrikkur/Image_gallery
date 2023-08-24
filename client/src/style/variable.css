@@ -13,6 +13,10 @@
 
 
 :root #light{
+
+	--color-primary:#eed8c0;
+	--color-secondary:#9775FA;
+
 	--bg-color-primary:#9775FA;
     --bg-color-secondary:#ffffff;
     --bg-color-ternary:#F5F6FA;

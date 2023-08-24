@@ -1,23 +1,86 @@
 .modal-container {
+	width: 85%;
+	/* background-color: cadetblue; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    position: relative;
+}
+.modal-container .img-prev{
+    position: absolute;
+    right: -250px;
+    top: 10px;
+}
+.modal-container .img-prev img{
+    width: 150px;
+    height: 110px;
+    object-fit: contain;
+}
+.modal-container .add-img {
+	height: 120px;
+	margin-top: 20px;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(68, 67, 67);
+    position: relative;
 }
-.modal-container .add-img {
-    width: 50px;
-	height: 50px;
+.modal-container .add-img label  {
+	/* width: 40px; */
+	/* height: 40px; */
+    padding: 5px 12px;
 	border-radius: 50%;
-    background-color: rgba(151, 151, 151, 0.664);
-	color: #eed8c0;
-	font-family: Roboto;
+	background-color: transparent;
+	color: var(--color-primary);
 	font-size: 30px;
-	font-style: normal;
 	font-weight: 300;
-	line-height: normal;
-    text-align: center;
-    padding-top: 5px;
+	border: 1px solid var(--color-primary);
+	transition: 0.1s ease-in-out;
 }
-.modal-container .add-img {
+.modal-container .add-img input[type='file']{
+    display: none;
+}
 
+.modal-container .add-img .icon:hover {
+    background-color: var(--color-primary);
+	color: white;
+}
+.modal-container .add-img .upload-file {
+width: 53px;
+height: 30px;
+font-size: 16px;
+font-weight: 400;
+color: rgb(68, 67, 67);
+margin: 10px;
+}
+.modal-container .loading-bar {
+	width: 100%;
+    height: 20px;
+	display: flex;
+    /* margin-bottom: 30px; */
+	/* justify-content: center; */
+	/* background-color: rgba(102, 51, 153, 0.336); */
+}
+.modal-container .image-display {
+	width: 100%;
+	height: 500px;
+	/* background-color: gray; */
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 230px;
+	grid-auto-rows: 230px;
+	gap: 10px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.modal-container .image-display img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50%;
 }
