@@ -32,6 +32,7 @@ const updateDataBase = (filename) => {
 }
 
 router.get('/', (req, res) => {
+    console.log('inside router level middleware');  
     res.json({
         imageList: database
     })
