@@ -6,25 +6,27 @@ import { API_URL } from "../../api";
 
 export const Modal = ({ children }) => {
 	const [image, setImage] = useState({});
+
 	const [tempFile, setTempFile] = useState({
 		name: "",
 		preview: "",
+		status: false,
 	});
 	const [fetchedImage, setFetchedImage] = useState([]);
+	const [showLoadingBar,setShowLoadingBar]=useState(false);
 
 	const fetchImages = async () => {
-        try {
-            const response = await axios(`${API_URL}/api/imageList`);
-            setFetchedImage(response.data);                
-        } catch (error) {
-            console.log(error);
-        }
+		try {
+			const response = await axios(`${API_URL}/api/imageList`);
+			setFetchedImage(response.data.imageList);
+			console.log("Images fetched from DB");
+		} catch (error) {
+			console.log(error);
+		}
 	};
-    useEffect(() => {
-      fetchImages();
-    
-    }, [])
-    
+	useEffect(() => {
+		fetchImages();
+	}, []);
 
 	const handleImageSelected = (event) => {
 		setImage(event.target.files[0]);
@@ -32,30 +34,37 @@ export const Modal = ({ children }) => {
 			...prev,
 			preview: URL.createObjectURL(event.target.files[0]),
 			name: event.target.files[0].name,
+			status: true,
 		}));
 	};
 
 	const handleUpload = async () => {
 		const formData = new FormData();
 		formData.append("upload_image", image);
-		// formData.append("user-name", "Aswinkumar");
-
+		formData.append("user-name", "Aswinkumar");
+		setShowLoadingBar(true);
 		console.log("image==", image);
 		console.log("formData==", formData);
 
-        try {
-            const response= await axios(`${API_URL}/api/upload`,{
-                method:'POST',
-                headers:{
-                    "Content-Type": "multipart/form-data"
-                },
-                data: formData
-            });
-            console.log(response.data);
-                
-        } catch (error) {
-            console.log(error);
-        }
+		try {
+			const response = await axios(`${API_URL}/api/imageList/upload`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+				data: formData,
+			});
+			console.log(response.data);
+			// fetchImages();
+			setFetchedImage(response.data.imageList);
+
+			setTempFile((prev) => ({
+				...prev,
+				status: false,
+			}));
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
@@ -65,20 +74,22 @@ export const Modal = ({ children }) => {
 					+
 					<input type="file" accept="image/*" id="file-upload" onChange={handleImageSelected} />
 				</label>
-				<div className="img-name">{tempFile.name}</div>
-				{tempFile.name && (
+				<div className="img-name">{tempFile.status && tempFile.name}</div>
+				{tempFile.name && tempFile.status && (
 					<button className="upload-file" onClick={handleUpload}>
 						upload
 					</button>
 				)}
 
-				<div className="img-prev">{tempFile.preview && <img src={tempFile.preview} alt="selected img" />}</div>
+				<div className="img-prev">
+					{tempFile.preview && tempFile.status && <img src={tempFile.preview} alt="selected img" />}
+				</div>
 			</div>
-			<div className="loading-bar">{tempFile.name && <LoadingBar />}</div>
+			<div className="loading-bar">{tempFile.name && <LoadingBar showLoadingBar={showLoadingBar} />}</div>
 
 			<div className="image-display">
 				{fetchedImage?.map((data) => {
-					return <img key={data.id} src={data.image} alt="img" />;
+					return <img key={data.id} src={`${API_URL}/images/${data.image}`} alt="img" />;
 				})}
 			</div>
 		</div>

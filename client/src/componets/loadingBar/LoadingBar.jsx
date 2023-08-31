@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./LoadingBar.css";
 
-export const LoadingBar = () => {
+export const LoadingBar = ({ showLoadingBar }) => {
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
@@ -10,9 +10,9 @@ export const LoadingBar = () => {
 			console.log("loading animation...");
 		}, 50);
 		setTimeout(() => {
-            clearInterval(loader)
-        }, 2000);
+			clearInterval(loader);
+		}, 2000);
 	}, []);
 
-	return <div className="loading-bar-container" style={{ width: `${width}%` }}></div>;
+	return showLoadingBar && <div className="loading-bar-container" style={{ width: `${width}%` }}></div>;
 };

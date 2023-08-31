@@ -1,18 +1,1 @@
-[
-	{
-		"id": 1,
-		"image": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=900&t=st=1692866320~exp=1692866920~hmac=b275fdca2a9ca09dc94ce9e0f8e75e452754fae0c37258ff8fe29508d260cb95"
-	},
-	{
-		"id": 2,
-		"image": "https://img.freepik.com/free-photo/autumn-season-leafs-plant-scene-generative-ai_188544-7971.jpg?w=826&t=st=1692866390~exp=1692866990~hmac=651d3b79bdfd3e6436e84c9969262e17b336791f31d2d074885041a781334aec"
-	},
-	{
-		"id": 3,
-		"image": "https://img.freepik.com/free-photo/reflection-lights-mountain-lake-captured-parco-ciani-lugano-switzerland_181624-24209.jpg?w=826&t=st=1692866423~exp=1692867023~hmac=715316b0fbfc6de1e631a5a66f2f0525962d65be8e942408557e45cfe2fae240"
-	},
-	{
-		"id": 4,
-		"image": "https://img.freepik.com/free-photo/beautiful-shot-colorful-autumn-forest-full-different-kinds-plants_181624-12425.jpg?w=826&t=st=1692866489~exp=1692867089~hmac=3eacb911577aff56a4c0b958e26d988f66128832ec9e61a13699a2cb78cc793b"
-	}
-]
+[{"id":"0169c3d8","image":"upload_image-1693457306442-197408026.avif"},{"id":"9de67a5e-e8e7-418c-a044-5a4405ad05ba","image":"upload_image-1693231883331-759613518.jpg"},{"id":"a7ae1a06-4cdd-4877-a4b3-64baa8ba9064","image":"upload_image-1693231851294-550225778.avif"},{"id":"c12eba1e-eb7e-4c16-9ef0-b9cdb5e2d8de","image":"upload_image-1693228423056-425208862.avif"},{"id":"3ca2bd0c-6e3d-40e3-8c87-1a2dd127d056","image":"upload_image-1693228412295-558523988.avif"},{"id":"397f91f1-478e-4432-8df2-0ef84515677f","image":"upload_image-1693228247039-760803199.avif"},{"id":"15de03a2-8e16-4675-8129-93a18ebbb571","image":"upload_image-1693228154347-824144713.jpg"}]
