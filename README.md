@@ -1,9 +1,9 @@
-# Image Gallery <span align="right"> with Image Upload Demonstration</span>
+# Image Gallery
 
 
 *This repository contains a simple Image Gallery web application that allows users to upload images from their local storage to the server. 
 The uploaded images are stored in the **'public/images'** folder, and they can be accessed through API endpoints. 
-This project demonstrates the use of npm packages like multer for handling file uploads, axios for communication with the server, and various <u>middleware</u> on the server.*
+This project demonstrates the use of npm packages like multer for handling file uploads, axios for communication with the server, and various <b>middleware</b> on the server.*
 
   <img  align="center" src="https://github.com/aswintrikkur/Image_gallery/assets/125629462/83e53c66-188a-4a2d-8769-2741435b6a90" 
     alt="user-interface" width="700"  >
