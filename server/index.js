@@ -24,7 +24,7 @@ app.use('/api/imageList', (req,res,next)=>{
 });
 
 
-app.use('/api/imageList', imageListRouter);
+app.use('/api/imageList', imageListRouter);     // calling router level middleware
 
 app.use('*', (req, res) => {
     res.status(404).json('end-ponit does not exist')

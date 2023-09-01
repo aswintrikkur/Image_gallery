@@ -14,12 +14,12 @@
 
 :root #light{
 
-	--color-primary:#eed8c0;
+	--color-primary:#be9467;
 	--color-secondary:#9775FA;
 
-	--bg-color-primary:#9775FA;
-    --bg-color-secondary:#ffffff;
-    --bg-color-ternary:#F5F6FA;
+	--bg-color-primary:#c9cacc;
+    --bg-color-secondary:rgb(150, 140, 140);
+    /* --bg-color-ternary:#F5F6FA; */
     --text-color-primary:#1D1E20;
     --text-color-secondary:#8F959E;
     --color-black-white: black;

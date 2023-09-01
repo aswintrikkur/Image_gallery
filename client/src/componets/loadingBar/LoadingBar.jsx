@@ -11,8 +11,9 @@ export const LoadingBar = ({ showLoadingBar }) => {
 		}, 50);
 		setTimeout(() => {
 			clearInterval(loader);
+			setWidth(0);
 		}, 2000);
 	}, []);
 
-	return showLoadingBar && <div className="loading-bar-container" style={{ width: `${width}%` }}></div>;
+	return  <div className="loading-bar-container" style={{ width: `${width}%` }}></div>;
 };

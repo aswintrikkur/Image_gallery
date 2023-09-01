@@ -13,7 +13,7 @@ export const Modal = ({ children }) => {
 		status: false,
 	});
 	const [fetchedImage, setFetchedImage] = useState([]);
-	const [showLoadingBar,setShowLoadingBar]=useState(false);
+	const [showLoadingBar, setShowLoadingBar] = useState(false);
 
 	const fetchImages = async () => {
 		try {
@@ -55,8 +55,7 @@ export const Modal = ({ children }) => {
 				data: formData,
 			});
 			console.log(response.data);
-			// fetchImages();
-			setFetchedImage(response.data.imageList);
+			// setFetchedImage(response.data.imageList);   //couldn't receiving the update imageList due to async behaviour
 
 			setTempFile((prev) => ({
 				...prev,
@@ -65,6 +64,10 @@ export const Modal = ({ children }) => {
 		} catch (error) {
 			console.log(error);
 		}
+		// To refresh the page 2000ms after uploading image. so it auto fetch imgage with help of useEffect()
+		setTimeout(() => {
+			window.location.reload();
+		}, 1000);
 	};
 
 	return (
