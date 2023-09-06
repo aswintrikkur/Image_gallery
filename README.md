@@ -67,6 +67,7 @@ This project demonstrates the use of npm packages like multer for handling file 
 
        cd ../server
        npm install
+       npm i nodemon -D
 
 
 <!--

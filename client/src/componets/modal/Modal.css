@@ -7,36 +7,25 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-    position: relative;
-}
-.modal-container .img-prev{
-    position: absolute;
-    right: -250px;
-    /* right: -50%; */
-    bottom: 10%;
-}
-.modal-container .img-prev img{
-    width: 100px;
-    /* height: 110px; */
-    object-fit: contain;
 }
 .modal-container .add-img {
 	/* height: 100px; */
+	min-width: 100%;
 	min-height: max-content;
 	margin-top: 20px;
-    /* background-color: aqua; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 400;
-    color: rgb(68, 67, 67);
-    position: relative;
+	/* background-color: aqua; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+	color: rgb(68, 67, 67);
+	position: relative;
 }
-.modal-container .add-img label  {
+.modal-container .add-img label {
 	/* width: 40px; */
 	/* height: 40px; */
-    padding: 0px 10px;
+	padding: 0px 10px;
 	border-radius: 50%;
 	margin-bottom: 10px;
 	background-color: transparent;
@@ -46,28 +35,50 @@
 	border: 1px solid var(--color-primary);
 	transition: 0.1s ease-in-out;
 }
-.modal-container .add-img input[type='file']{
-    display: none;
+.modal-container .add-img input[type="file"] {
+	display: none;
 }
 
 .modal-container .add-img .icon:hover {
-    background-color: var(--color-primary);
+	background-color: var(--color-primary);
 	color: white;
 }
-.modal-container .add-img .upload-file {
-width: 53px;
-height: 30px;
-font-size: 16px;
-font-weight: 400;
-color: rgb(68, 67, 67);
-margin: 10px;
+.modal-container .add-img .img-name {
+	width: 400px;
+	text-align: center;
+	/* background-color: blueviolet; */
+	word-break: break-all;
 }
+.modal-container .add-img .img-name p {
+}
+
+.modal-container .add-img .upload-file {
+	width: 53px;
+	height: 30px;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(68, 67, 67);
+	margin: 10px;
+}
+/* preview image */
+.modal-container .img-prev {
+	position: absolute;
+	right: 50px;
+	bottom: 50%;
+	translate: 0 50%;
+}
+.modal-container .img-prev img {
+	width: 100px;
+	height: 110px;
+	object-fit: contain;
+}
+/* loading-bar */
 .modal-container .loading-bar {
 	width: 100%;
-    height: 20px;
+	height: 20px;
 	display: flex;
 	/* background-color: gray; */
-    /* margin-bottom: 30px; */
+	/* margin-bottom: 30px; */
 	/* justify-content: center; */
 	/* background-color: rgba(102, 51, 153, 0.336); */
 }
@@ -90,4 +101,86 @@ margin: 10px;
 	object-fit: cover;
 	object-position: 50%;
 	/* background-color: gray; */
+}
+
+/*---------------- desktop version----------------- */
+@media (max-width: 750px) {
+	.modal-container {
+		padding: 0 40px;
+	}
+	.modal-container .add-img {
+		margin-top: 10px;
+	}
+	.modal-container .add-img .img-name {
+		width: 300px;
+		text-align: center;
+		/* background-color: blueviolet; */
+		word-break: break-all;
+		font-size: 12px;
+	}
+	.modal-container .img-prev {
+		position: absolute;
+		right: 10px;
+		bottom: 20%;
+		translate: 0 50%;
+	}
+	.modal-container .img-prev img {
+		width: 80px;
+		height: 70px;
+		object-fit: contain;
+	}
+	.modal-container .image-display {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 180px;
+		grid-auto-rows: 180px;
+		gap: 5px;
+	}
+}
+
+/*---------------- mobile version----------------- */
+@media (max-width: 450px) {
+	.modal-container {
+		min-height: 84%;
+		padding: 0 20px;
+	}
+
+
+	.modal-container .add-img {
+		margin-top: 7px;
+	}
+	.modal-container .add-img .img-name {
+		/* width: 300px; */
+		text-align: center;
+		background-color: blueviolet;
+		word-break: break-all;
+		font-size: 10px;
+	}
+	.modal-container .add-img .upload-file {
+		/* width: 34px; */
+		height: 18px;
+		font-size: 12px;
+		font-weight: 400;
+		color: rgb(68, 67, 67);
+		margin: 10px;
+	}
+	.modal-container .img-prev {
+		position: absolute;
+		right: 0px;
+		bottom: 20%;
+		translate: 0 50%;
+	}
+	.modal-container .img-prev img {
+		width: 60px;
+		height: 60px;
+		object-fit: contain;
+	}
+
+	.modal-container .image-display {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 120px;
+		grid-auto-rows: 120px;
+		gap: 5px;
+	}
 }

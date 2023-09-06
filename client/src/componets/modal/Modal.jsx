@@ -77,7 +77,8 @@ export const Modal = ({ children }) => {
 					+
 					<input type="file" accept="image/*" id="file-upload" onChange={handleImageSelected} />
 				</label>
-				<div className="img-name">{tempFile.status && tempFile.name}</div>
+				<div className="img-name">{tempFile.status && <p>{tempFile.name}</p>}</div>
+				
 				{tempFile.name && tempFile.status && (
 					<button className="upload-file" onClick={handleUpload}>
 						upload

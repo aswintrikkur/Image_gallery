@@ -18,3 +18,28 @@ font-size: 40px;
     font-weight: 300;
     line-height: normal;
 }
+
+/* -----------desktop version----------- */
+@media(max-width: 750px){
+    .header-container{
+    }
+    .header-container h1{
+     font-size: 36px;   
+    }
+    .header-container h3{
+        font-size: 22px;
+    }
+}
+
+/* -----------mobile version----------- */
+@media(max-width: 450px){
+    .header-container{
+    min-height: 16%;        
+    }
+    .header-container h1{
+     font-size: 30px;   
+    }
+    .header-container h3{
+        font-size: 16px;
+    }
+}
